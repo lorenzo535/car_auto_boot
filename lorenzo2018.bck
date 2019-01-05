@@ -1,0 +1,7 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP GY712-breakout
+D GY712 breakout hall effect current measure
+$ENDCMP
+#
+#End Doc Library
