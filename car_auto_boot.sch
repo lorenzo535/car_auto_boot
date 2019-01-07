@@ -61,12 +61,12 @@ $EndComp
 $Comp
 L power:GND #PWR0103
 U 1 1 5C23E573
-P 1450 1900
-F 0 "#PWR0103" H 1450 1650 50  0001 C CNN
-F 1 "GND" H 1455 1727 50  0000 C CNN
-F 2 "" H 1450 1900 50  0001 C CNN
-F 3 "" H 1450 1900 50  0001 C CNN
-	1    1450 1900
+P 1500 1900
+F 0 "#PWR0103" H 1500 1650 50  0001 C CNN
+F 1 "GND" H 1505 1727 50  0000 C CNN
+F 2 "" H 1500 1900 50  0001 C CNN
+F 3 "" H 1500 1900 50  0001 C CNN
+	1    1500 1900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -83,12 +83,12 @@ $EndComp
 $Comp
 L power:VCC #PWR0105
 U 1 1 5C23E769
-P 1450 1800
-F 0 "#PWR0105" H 1450 1650 50  0001 C CNN
-F 1 "VCC" H 1467 1973 50  0000 C CNN
-F 2 "" H 1450 1800 50  0001 C CNN
-F 3 "" H 1450 1800 50  0001 C CNN
-	1    1450 1800
+P 1450 1850
+F 0 "#PWR0105" H 1450 1700 50  0001 C CNN
+F 1 "VCC" H 1467 2023 50  0000 C CNN
+F 2 "" H 1450 1850 50  0001 C CNN
+F 3 "" H 1450 1850 50  0001 C CNN
+	1    1450 1850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -140,17 +140,9 @@ Wire Wire Line
 Wire Wire Line
 	1750 1550 1750 1500
 Wire Wire Line
-	1450 1800 2600 1800
-Wire Wire Line
-	2600 1800 2600 1850
-Wire Wire Line
-	2600 1900 2600 1950
-Wire Wire Line
-	2600 2050 2600 2150
-Text Label 2050 2150 0    50   ~ 0
+	1450 1850 2600 1850
+Text Label 2050 2350 0    50   ~ 0
 12V_DRIVERS
-Wire Wire Line
-	2600 2150 2050 2150
 Wire Wire Line
 	9750 1850 9950 1850
 Wire Wire Line
@@ -165,10 +157,10 @@ Wire Wire Line
 	8900 1650 8750 1650
 Wire Wire Line
 	8750 1650 8750 1500
-Text Label 8150 1750 0    50   ~ 0
+Text Label 8550 1900 0    50   ~ 0
 12V_DRIVERS
 Wire Wire Line
-	8900 1750 8150 1750
+	8900 1750 8550 1750
 $Comp
 L Device:Fuse F1
 U 1 1 5C240577
@@ -449,28 +441,6 @@ Wire Wire Line
 Connection ~ 3850 6250
 Wire Wire Line
 	3850 6250 3650 6250
-$Comp
-L Switch:SW_Push SW2
-U 1 1 5C2BF90F
-P 7950 3550
-F 0 "SW2" H 7950 3835 50  0000 C CNN
-F 1 "SW_1" H 7950 3744 50  0000 C CNN
-F 2 "Buttons_Switches_THT:SW_TH_Tactile_Omron_B3F-10xx" H 7950 3750 50  0001 C CNN
-F 3 "" H 7950 3750 50  0001 C CNN
-	1    7950 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR0115
-U 1 1 5C2BF985
-P 8250 3550
-F 0 "#PWR0115" H 8250 3400 50  0001 C CNN
-F 1 "VCC" H 8267 3723 50  0000 C CNN
-F 2 "" H 8250 3550 50  0001 C CNN
-F 3 "" H 8250 3550 50  0001 C CNN
-	1    8250 3550
-	1    0    0    -1  
-$EndComp
 Text Label 7550 3900 0    50   ~ 0
 MOTOR2_PWM
 Wire Wire Line
@@ -552,8 +522,6 @@ F 3 "~" H 2800 1550 50  0001 C CNN
 	1    2800 1550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2600 1650 2600 1750
 $Comp
 L Connector:Screw_Terminal_01x04 J1B1
 U 1 1 5C33B1B1
@@ -565,20 +533,10 @@ F 3 "~" H 2800 1950 50  0001 C CNN
 	1    2800 1950
 	1    0    0    -1  
 $EndComp
-Connection ~ 2600 2150
 Wire Wire Line
 	2600 1550 2600 1650
 Connection ~ 2600 1550
 Connection ~ 2600 1650
-Wire Wire Line
-	2500 1900 2500 1650
-Wire Wire Line
-	2500 1650 2600 1650
-Wire Wire Line
-	1450 1900 2500 1900
-Connection ~ 2500 1900
-Wire Wire Line
-	2500 1900 2600 1900
 $Comp
 L power:GND #PWR0117
 U 1 1 5C2645CF
@@ -663,10 +621,6 @@ Wire Wire Line
 	6550 3300 6550 3350
 Wire Wire Line
 	6550 3350 6500 3350
-Wire Wire Line
-	8150 3550 8250 3550
-Wire Wire Line
-	6500 3550 7750 3550
 Text Label 4150 3650 0    50   ~ 0
 SERVO_PWM
 Text Label 7200 3300 0    50   ~ 0
@@ -675,4 +629,100 @@ Text Label 6700 3450 0    50   ~ 0
 AUX_IN4
 Text Notes 7650 5550 0    50   ~ 0
 LOCK_SW1: yellow wire from lock mechanism\nLOCK_SW2: green wire from lock mechanism\nNB: connect +5V to brown wire from lock mechanism\n\n\nOn Cytron motor driver:\nMOTxA : black wire for motor x\nMOTxB : red wire for motor x
+$Comp
+L Transistor_FET:IRLZ44N Q1
+U 1 1 5C320BD9
+P 9100 2900
+F 0 "Q1" H 9305 2946 50  0000 L CNN
+F 1 "IRLZ44N" H 9305 2855 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-220-3_Vertical" H 9350 2825 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irlz44n.pdf" H 9100 2900 50  0001 L CNN
+	1    9100 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 1900 8550 1750
+Wire Wire Line
+	9200 2700 9350 2700
+Text Label 9350 2700 0    50   ~ 0
+0V_DRIVERS
+$Comp
+L Device:R R5
+U 1 1 5C3315EE
+P 8750 3050
+F 0 "R5" V 8543 3050 50  0000 C CNN
+F 1 "1k" V 8634 3050 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 8680 3050 50  0001 C CNN
+F 3 "~" H 8750 3050 50  0001 C CNN
+	1    8750 3050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5C331696
+P 9200 3100
+F 0 "#PWR01" H 9200 2850 50  0001 C CNN
+F 1 "GND" H 9205 2927 50  0000 C CNN
+F 2 "" H 9200 3100 50  0001 C CNN
+F 3 "" H 9200 3100 50  0001 C CNN
+	1    9200 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 3550 8250 3550
+Wire Wire Line
+	2400 1600 2400 1650
+Wire Wire Line
+	2400 1650 2600 1650
+Text Label 1700 2050 0    50   ~ 0
+0V_DRIVERS
+Wire Wire Line
+	2600 1950 1500 1950
+Wire Wire Line
+	1500 1950 1500 1900
+Wire Wire Line
+	2600 2050 1700 2050
+Wire Wire Line
+	2600 2150 2600 2350
+Wire Wire Line
+	2600 2350 2050 2350
+Text Label 1900 1750 0    50   ~ 0
+12V_DRIVERS
+Wire Wire Line
+	2600 1750 1900 1750
+$Comp
+L power:GND #PWR?
+U 1 1 5C37C722
+P 1700 1600
+F 0 "#PWR?" H 1700 1350 50  0001 C CNN
+F 1 "GND" H 1705 1427 50  0000 C CNN
+F 2 "" H 1700 1600 50  0001 C CNN
+F 3 "" H 1700 1600 50  0001 C CNN
+	1    1700 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1600 2400 1600
+Wire Wire Line
+	8750 2900 8900 2900
+$Comp
+L power:GND #PWR?
+U 1 1 5C390484
+P 8750 3200
+F 0 "#PWR?" H 8750 2950 50  0001 C CNN
+F 1 "GND" H 8755 3027 50  0000 C CNN
+F 2 "" H 8750 3200 50  0001 C CNN
+F 3 "" H 8750 3200 50  0001 C CNN
+	1    8750 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 3550 8250 3100
+Wire Wire Line
+	8250 3100 8600 3100
+Wire Wire Line
+	8600 3100 8600 2900
+Wire Wire Line
+	8600 2900 8750 2900
+Connection ~ 8750 2900
 $EndSCHEMATC
